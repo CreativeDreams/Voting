@@ -138,7 +138,8 @@ class VotingPlugin extends Gdn_Plugin {
             break;
          case 'popular':
          default:
-            $CommentModel->OrderBy(array('coalesce(c.Score, 0) desc', 'c.CommentID'));
+            // $CommentModel->OrderBy(array('coalesce(c.Score, 0) desc', 'c.CommentID'));
+            $CommentModel->OrderBy(array('c.Score desc', 'c.CommentID'));
             break;
       }
    }
